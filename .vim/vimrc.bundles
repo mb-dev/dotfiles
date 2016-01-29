@@ -1,0 +1,56 @@
+call plug#begin('~/.vim/plugged')
+
+
+  " General {
+
+    Plug 'altercation/vim-colors-solarized'
+    Plug 'spf13/vim-colors'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'tpope/vim-fugitive'
+    Plug 'scrooloose/syntastic'
+    Plug 'godlygeek/tabular'
+    Plug 'luochen1990/rainbow'
+    Plug 'majutsushi/tagbar'
+    Plug 'scrooloose/nerdtree'
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-repeat'
+    Plug 'rhysd/conflict-marker.vim'
+    Plug 'jiangmiao/auto-pairs'              " Insert or delete brackets, parens, quotes in pair.
+    Plug 'ctrlpvim/ctrlp.vim'                " Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
+    Plug 'tacahiroy/ctrlp-funky'             " A super simple function navigator for ctrlp.vim.
+    Plug 'terryma/vim-multiple-cursors'      " Brings multiple selection feature into Vim
+    Plug 'powerline/fonts'                   " Patched fonts for Powerline users.
+    Plug 'bling/vim-bufferline'              " Super simple vim plugin to show the list of buffers in the command bar.
+    Plug 'easymotion/vim-easymotion'         " Vim motion on speed!
+    Plug 'scrooloose/nerdtree'
+    Plug 'jistr/vim-nerdtree-tabs'
+    Plug 'flazz/vim-colorschemes'
+    Plug 'mbbill/undotree'
+    Plug 'nathanaelkane/vim-indent-guides'
+    Plug 'mhinz/vim-signify'
+    Plug 'tpope/vim-abolish'             " Allow working with variants of a word
+    Plug 'osyo-manga/vim-over'               " Preview in the command line window
+    Plug 'kana/vim-textobj-user'
+    Plug 'kana/vim-textobj-indent'
+    Plug 'gcmt/wildfire.vim'
+    Plug 'scrooloose/nerdcommenter'
+  " }
+
+  " Snippets & AutoComplete {
+    Plug 'Valloric/YouCompleteMe'
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+  " }
+
+  " Javascript {
+    Plug 'pangloss/vim-javascript'
+  " }
+
+
+  " Go {
+    Plug 'fatih/vim-go'
+  " }
+
+
+call plug#end()

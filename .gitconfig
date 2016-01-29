@@ -1,0 +1,26 @@
+[user]
+  name = Moshe Bergman
+  email = mb-dev@users.noreply.github.com
+[core]
+  excludesfile = /Users/moshebergman/.gitignore_global
+[difftool "sourcetree"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
+[mergetool "sourcetree"]
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
+[push]
+  default = simple
+[filter "hawser"]
+  clean = git hawser clean %f
+  smudge = git hawser smudge%f
+  required = true
+
+## alias {{{
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+  cma = commit -a -m
+# }}}
+
