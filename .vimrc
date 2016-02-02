@@ -31,7 +31,6 @@ source ~/.vim/vimrc.bundles
   set mouse=a                                     " Automatically enable mouse usage
   set mousehide                                   " Hide the mouse cursor while typing
   scriptencoding utf-8
-  set autowrite                                   " Automatically write a file when leaving a modified buffer
   set shortmess+=filmnrxoOtT                      " Abbrev. of messages (avoids 'hit enter')
                                                   " Allow for cursor beyond last character
   set viewoptions=folds,options,cursor,unix,slash "
@@ -43,8 +42,15 @@ source ~/.vim/vimrc.bundles
   set iskeyword-=#                    " '#' is an end of word designator
   set iskeyword-=-                    " '-' is an end of word designator 
 
+  :au FocusLost * silent! wa          " Auto save when buffer is switched
+  set autowriteall                    " Automatically write a file when leaving a modified buffer
+  set noswapfile
+  set nobackup
+  set nowritebackup
+  set undodir=~/.vim-undo
+
   " Always switch to the current file directory
-  autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
+  " autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 
   " When possible use + register for copy-paste
   if has('clipboard')

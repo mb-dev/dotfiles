@@ -21,11 +21,12 @@ alias dl='docker ps -l -q'
 alias reload='source ~/.bash_profile'
 
 # git
-alias gst='git status'
+alias gaa='git add -A'
+alias gs='git status'
 alias gl='git pull'
 alias gp='git push'
-
-
+alias gca='git commit -v -a'
+alias gr='git reset'
 
 function parse_git_branch () {
        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -48,6 +49,7 @@ export GOPATH
 export PATH=$PATH:$GOPATH/bin
 export NVM_DIR=~/.nvm
 
-# Aliases
+# Tasks
 alias tasks-plan-my-time='. ~/tasks/plan-my-time.sh'
 alias tasks-algorithms='~/tasks/algorithms.sh'
+alias tasks-math-comp-sci='find ~/tasks/math-comp-sci -maxdepth 1 -type f -exec cmd; \'
