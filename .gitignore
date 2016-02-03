@@ -1,3 +1,11 @@
 .vim/plugged
 .vim/spell
 *.swp
+.atom/storage
+.atom/compile-cache
+.atom/dev
+.atom/.npm
+.atom/.node-gyp
+.atom/packages
+.atom/blob-store
+.atom/.apm

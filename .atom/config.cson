@@ -1,0 +1,14 @@
+"*":
+  autosave:
+    enabled: true
+  core: {}
+  editor:
+    fontSize: 13
+    invisibles: {}
+  "exception-reporting":
+    userId: "eeca0b30-3052-3250-8bab-d351193aed0f"
+  fonts:
+    fontFamily: "Droid Sans Mono"
+    preview: "testing some font"
+  welcome:
+    showOnStartup: false
