@@ -1,0 +1,15 @@
+"mb-dev.github.io":
+  title: "mb-dev.github.io"
+  paths: [
+    "/Users/moshebergman/workspace/mb-dev.github.io"
+  ]
+tasks:
+  title: "tasks"
+  paths: [
+    "/Users/moshebergman/tasks"
+  ]
+"mbdev-ansible":
+  title: "mbdev-ansible"
+  paths: [
+    "/Users/moshebergman/workspace/mbdev-ansible"
+  ]
