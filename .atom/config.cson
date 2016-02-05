@@ -10,5 +10,8 @@
   fonts:
     fontFamily: "Droid Sans Mono"
     preview: "testing some font"
+  "go-plus":
+    goInstallation: "/usr/local/opt/go/libexec/bin"
+    goPath: "~/workspace/go"
   welcome:
     showOnStartup: false

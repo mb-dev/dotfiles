@@ -1,0 +1,3 @@
+install autoconf automake cmake cscope gettext git
+install keychain libtool lua macvim neovim openssl
+install pkg-config wget

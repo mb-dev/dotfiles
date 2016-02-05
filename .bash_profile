@@ -17,6 +17,11 @@ alias cgulp='gulp --require coffee-script'
 # docker
 alias dl='docker ps -l -q'
 
+# folders
+alias -- -='cd -'
+alias ..='cd ..'
+alias cd..='cd ..'
+
 # other
 alias reload='source ~/.bash_profile'
 
@@ -44,8 +49,7 @@ PS1="\w$YELLOW\$(parse_git_branch)$NO_COLOUR\$ "
 PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH="%ANDROID_HOME%\platform-tools:${PATH}"
-GOPATH=/Users/moshebergman/workspace/go/
-export GOPATH
+export GOPATH="~/workspace/go/"
 export PATH=$PATH:$GOPATH/bin
 export NVM_DIR=~/.nvm
 
@@ -53,3 +57,14 @@ export NVM_DIR=~/.nvm
 alias tasks-plan-my-time='. ~/tasks/plan-my-time.sh'
 alias tasks-algorithms='~/tasks/algorithms.sh'
 alias tasks-math-comp-sci='find ~/tasks/math-comp-sci -maxdepth 1 -type f -exec cmd; \'
+
+[ -f ~/.bash_extras ] && source ~/.bash_extras
+
+# history
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+export HISTSIZE=100000                   # big big history
+export HISTFILESIZE=100000               # big big history
+shopt -s histappend                      # append to history, don't overwrite it
+
+# Save and reload the history after each command finishes
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"

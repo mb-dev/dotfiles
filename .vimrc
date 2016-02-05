@@ -184,6 +184,13 @@ source ~/.vim/vimrc.bundles
   nnoremap <A-j> :m .+1<CR>==
   nnoremap <A-k> :m .-2<CR>==
 " }
+"
+  if has("gui_macvim")
+    let g:AutoPairsShortcutToggle     = 'π' " <m-p>
+    let g:AutoPairsShortcutFastWrap   = '∑' " <m-w>
+    let g:AutoPairsShortcutJump       = '∆' " <m-j>
+    let g:AutoPairsShortcutBackInsert = '∫' " <m-b>
+  endif
 
 " Plugin configuration {
   source ~/.vim/plugins/ctags.vim

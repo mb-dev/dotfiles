@@ -1,5 +1,6 @@
 .vim/plugged
 .vim/spell
+.config/nvim/plugged
 *.swp
 .atom/storage
 .atom/compile-cache
