@@ -1,3 +1,15 @@
-install autoconf automake cmake cscope gettext git
-install keychain libtool lua macvim neovim openssl
-install pkg-config wget
+install android-sdk ansible autoconf autoenv automake bash
+install bazaar boost brew-cask cairo cloog cloog-ppl015
+install cmake cscope flow fontconfig freetype gcc
+install gd gdbm gettext ghostscript git glib
+install gmp gmp4 gnupg go graphviz hub
+install imagemagick isl jbig2dec jpeg keybase ledger
+install libevent libffi libgpg-error libksba libmpc libmpc08
+install libpng libtiff libtool libyaml little-cms2 lua
+install macvim memcached mongodb mpfr mpfr2 msgpack
+install mysql neovim neovim-dot-app nvm openssl ossp-uuid
+install pcre pdftohtml pidof pixman pkg-config postgresql
+install ppl011 pyqt pyside python python3 qt
+install r readline redis ruby sbt scons
+install shiboken sip sqlite ssh-copy-id sshpass vim
+install watchman xz
