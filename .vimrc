@@ -6,11 +6,8 @@ source ~/.vim/vimrc.bundles
 " Vim UI {
   set background=dark
   syntax on                                       " Syntax highlighting
-  let g:solarized_termcolors=256
-  let g:solarized_termtrans=1
-  let g:solarized_contrast="normal"
-  let g:solarized_visibility="normal"
-  color solarized                                 " Load a colorscheme
+  color Tomorrow-Night                            " Load a colorscheme
+  set guifont=Droid\ Sans\ Mono:h11               " Use Droid Sans Mono font
 
   set backspace=indent,eol,start                  " Backspace for dummies
   set linespace=0                                 " No extra spaces between rows
@@ -40,7 +37,7 @@ source ~/.vim/vimrc.bundles
   set hidden                          " Allow buffer switching without saving
   set iskeyword-=.                    " '.' is an end of word designator
   set iskeyword-=#                    " '#' is an end of word designator
-  set iskeyword-=-                    " '-' is an end of word designator 
+  set iskeyword-=-                    " '-' is an end of word designator
 
   :au FocusLost * silent! wa          " Auto save when buffer is switched
   set autowriteall                    " Automatically write a file when leaving a modified buffer
@@ -199,6 +196,6 @@ source ~/.vim/vimrc.bundles
   source ~/.vim/plugins/nerd-tree.vim
   source ~/.vim/plugins/vim-airline.vim
   source ~/.vim/plugins/youcomplete.vim
-  
+
 
 " }
