@@ -1,12 +1,6 @@
 set clipboard=unnamed
 
 "
-" APPERANCE
-"
-color Tomorrow-Night                            " Load a colorscheme
-set guifont=Droid\ Sans\ Mono:h11               " Use Droid Sans Mono font
-
-"
 " PLUGINS
 "
 call plug#begin('~/.config/nvim/plugged')
@@ -18,6 +12,13 @@ Plug 'fatih/vim-go'
 
 Plug 'chriskempson/vim-tomorrow-theme'
 call plug#end()
+
+"
+" APPERANCE
+"
+color Tomorrow-Night                            " Load a colorscheme
+set guifont=Droid\ Sans\ Mono:h11               " Use Droid Sans Mono font
+
 
 "
 " OTHER SETTINGS
