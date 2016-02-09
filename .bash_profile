@@ -32,6 +32,7 @@ alias gl='git pull'
 alias gp='git push'
 alias gca='git commit -v -a'
 alias gr='git reset'
+alias gco='git checkout'
 
 function parse_git_branch () {
        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -42,7 +43,7 @@ YELLOW="\[\033[0;33m\]"
 GREEN="\[\033[0;32m\]"
 NO_COLOUR="\[\033[0m\]"
 
-PS1="\w$YELLOW\$(parse_git_branch)$NO_COLOUR\$ "
+PS1="\u \w$YELLOW\$(parse_git_branch)$NO_COLOUR\$ "
 
 # Setting PATH for Python 3.4
 # The orginal version is saved in .bash_profile.pysave
@@ -52,11 +53,6 @@ export PATH="%ANDROID_HOME%\platform-tools:${PATH}"
 export GOPATH="~/workspace/go/"
 export PATH=$PATH:$GOPATH/bin
 export NVM_DIR=~/.nvm
-
-# Tasks
-alias tasks-plan-my-time='. ~/tasks/plan-my-time.sh'
-alias tasks-algorithms='~/tasks/algorithms.sh'
-alias tasks-math-comp-sci='find ~/tasks/math-comp-sci -maxdepth 1 -type f -exec cmd; \'
 
 [ -f ~/.bash_extras ] && source ~/.bash_extras
 
