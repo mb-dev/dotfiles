@@ -1,5 +1,6 @@
 .vim/plugged
 .vim/spell
+.vim/sessions
 .DS_Store
 .config/nvim/plugged
 *.swp

@@ -35,6 +35,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'kana/vim-textobj-indent'
     Plug 'gcmt/wildfire.vim'
     Plug 'scrooloose/nerdcommenter'
+    Plug 'xolox/vim-misc'
+    Plug 'xolox/vim-session'
   " }
 
   " Snippets & AutoComplete {

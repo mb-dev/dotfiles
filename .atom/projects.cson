@@ -13,3 +13,8 @@ tasks:
   paths: [
     "/Users/moshebergman/workspace/mbdev-ansible"
   ]
+"plan-my-time":
+  title: "plan-my-time"
+  paths: [
+    "/Users/moshebergman/workspace/plan-my-time"
+  ]
