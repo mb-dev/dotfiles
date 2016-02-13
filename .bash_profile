@@ -50,9 +50,8 @@ PS1="\u \w$YELLOW\$(parse_git_branch)$NO_COLOUR\$ "
 PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH="%ANDROID_HOME%\platform-tools:${PATH}"
-export GOPATH="~/workspace/go/"
+export GOPATH="$HOME/workspace/go/"
 export PATH=$PATH:$GOPATH/bin
-export NVM_DIR=~/.nvm
 
 [ -f ~/.bash_extras ] && source ~/.bash_extras
 

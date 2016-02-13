@@ -1,4 +1,9 @@
-set nocompatible " get out of horrible vi-compatible mode
+ " Note: Skip initialization for vim-tiny or vim-small.
+ if 0 | endif
+
+ if &compatible
+   set nocompatible               " Be iMproved
+ endif
 
 source ~/.vim/functions.vim
 source ~/.vim/vimrc.bundles
@@ -106,6 +111,9 @@ source ~/.vim/vimrc.bundles
   nmap <silent> <leader>ev :e $MYVIMRC<CR>
   nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+  " Quicker save
+  nmap <leader>w :w<CR>
+
   " Easier moving in tabs and windows
   map <C-J> <C-W>j<C-W>_
   map <C-K> <C-W>k<C-W>_
@@ -188,14 +196,5 @@ source ~/.vim/vimrc.bundles
     let g:AutoPairsShortcutJump       = '∆' " <m-j>
     let g:AutoPairsShortcutBackInsert = '∫' " <m-b>
   endif
-
-" Plugin configuration {
-  source ~/.vim/plugins/ctags.vim
-  source ~/.vim/plugins/ctrlp.vim
-  source ~/.vim/plugins/fugitive.vim
-  source ~/.vim/plugins/nerd-tree.vim
-  source ~/.vim/plugins/vim-airline.vim
-  source ~/.vim/plugins/youcomplete.vim
-
 
 " }

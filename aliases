@@ -3,4 +3,11 @@ alias tasks-plan-my-time='. ~/tasks/plan-my-time.sh'
 alias tasks-algorithms='~/tasks/algorithms.sh'
 alias tasks-math-comp-sci='find ~/tasks/math-comp-sci -maxdepth 1 -type f -exec cmd; \'
 
+function openVimSession() {
+  gvim -S ~/.vim/sessions/$1.vim
+}
+alias gvs=openVimSession
+
+alias emacs="/usr/local/bin/emacs"
+alias vim="/usr/local/bin/vim"
 

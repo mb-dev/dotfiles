@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -53,10 +53,17 @@ plugins=(git)
 
 # User configuration
 export PATH="%ANDROID_HOME%platform-tools:/Library/Frameworks/Python.framework/Versions/3.4/bin:/opt/local/bin:/opt/local/sbin:~/workspace/adt-bundle-mac-x86_64-20131030/sdk/platform-tools/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/go/bin:/usr/local/opt/go/libexec/bin:~/workspace/go//bin"
+export ANDROID_HOME=/usr/local/opt/android-sdk
+export PATH="%ANDROID_HOME%\platform-tools:${PATH}"
+export GOPATH=$HOME/workspace/go/
+export GO15VENDOREXPERIMENT=1
+export PATH=$PATH:$GOPATH/bin
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
+[ -f ~/.aliases ] && source ~/.aliases
 [ -f ~/.bash_extras ] && source ~/.bash_extras
 
 # You may need to manually set your language environment

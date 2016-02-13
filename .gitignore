@@ -12,3 +12,6 @@
 .atom/packages
 .atom/blob-store
 .atom/.apm
+.vim/bundle/
+.config/robomongo
+.config/hub
