@@ -14,21 +14,6 @@ ZSH_THEME="robbyrussell"
 # sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
 
@@ -49,7 +34,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git vi-mode)
 
 # User configuration
 export PATH="%ANDROID_HOME%platform-tools:/Library/Frameworks/Python.framework/Versions/3.4/bin:/opt/local/bin:/opt/local/sbin:~/workspace/adt-bundle-mac-x86_64-20131030/sdk/platform-tools/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/go/bin:/usr/local/opt/go/libexec/bin:~/workspace/go//bin"

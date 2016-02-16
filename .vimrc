@@ -1,5 +1,5 @@
  " Note: Skip initialization for vim-tiny or vim-small.
- if 0 | endif
+ if !1 | finish | endif
 
  if &compatible
    set nocompatible               " Be iMproved

@@ -1,5 +1,8 @@
 #!/bin/bash
 
-ABSOLUTE_PATH=$(cd `dirname "${BASH_SOURCE[0]}"` && pwd)/`basename "${BASH_SOURCE[0]}"`
-ln -s ${ABSOLUTE_PATH}/.vim ~/.config/nvim
-ln -s ${ABSOLUTE_PATH}/.vimrc ~/.config/nvim/init.vim
+ln -s ~/workspace/dotfiles/.zshrc ~/.zshrc
+ln -s ~/workspace/dotfiles/aliases ~/.aliases
+ln -s ~/workspace/dotfiles/tasks ~/tasks
+ln -s ~/workspace/dotfiles/gcalclirc ~/.gcalclirc
+ln -s ~/workspace/dotfiles/.spacemacs ~/.spacemacs
+ln -s ~/workspace/dotfiles/.config/nvim ~/.config/nvim

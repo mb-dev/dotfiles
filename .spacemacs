@@ -29,21 +29,23 @@ values."
      git
      markdown
      go
+     react
+     python
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      spell-checking
      syntax-checking
-     ;; version-control
+     version-control
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(base16-theme magit)
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(anaconda-mode)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -96,22 +98,23 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light
-                         solarized-light
+   dotspacemacs-themes '(zen-and-art
+			 base16-tomorrow-dark
+   			 spacemacs-dark
                          solarized-dark
                          leuven
                          monokai
-                         zenburn)
+                         zenburn
+			 sanityinc-tomorrow-night)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+   dotspacemacs-default-font '("Droid Sans Mono for Powerline"
+                               :size 11
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.3)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -248,8 +251,9 @@ in `dotspacemacs/user-config'."
            "go build -v && go test -v && go vet"))
   ; Godef jump key binding
   (local-set-key (kbd "M-.") 'godef-jump))
-(add-hook 'go-mode-hook 'my-go-mode-hook)
-  )
+  (add-hook 'go-mode-hook 'my-go-mode-hook)
+  
+ )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -258,7 +262,35 @@ layers configuration. You are free to put any user code."
   (setq scroll-conservatively 101) ;; move minimum when cursor exits view, instead of recentering
   (setq mouse-wheel-scroll-amount '(1)) ;; mouse scroll moves 1 line at a time, instead of 5 lines
   (setq mouse-wheel-progressive-speed nil) ;; on a long mouse scroll keep scrolling by 1 line
+  (defun save-all ()
+    (interactive)
+    (save-some-buffers t))
+  (add-hook 'focus-out-hook 'save-all)
+  ;; Scroll left/right
+  (global-set-key [wheel-right] 'scroll-left)
+  (global-set-key [wheel-left] 'scroll-right)
+  ;; Indent 
+  (setq-default standard-indent 2)
+  (setq-default css-indent-offset 2)
+  (setq-default web-mode-css-indent-offset 2)
+  (setq-default web-mode-attr-indent-offset 2)
+  (setq-default web-mode-markup-indent-offset 2)
+  (setq-default js2-basic-offset 2)
+  (setq-default js-indent-level 2)
+  (setq-default web-mode-code-indent-offset 2)
+  ;; https://github.com/syl20bnr/spacemacs/tree/15de481a803b00983d6771309f8f99c1d1e464b8/layers/%2Bframeworks/react#optional-configuration
+  (with-eval-after-load 'web-mode
+    (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
   )
+
+  ;; Always truncate lines
+  (setq-default truncate-lines t)
+  ;; Paste behavior
+  (fset 'evil-visual-update-x-selection 'ignore)
+)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -269,7 +301,7 @@ layers configuration. You are free to put any user code."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (helm-flyspell helm-company helm-c-yasnippet flycheck-pos-tip flycheck company-statistics company-quickhelp company-go company auto-yasnippet auto-dictionary ac-ispell ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe use-package spacemacs-theme spaceline smooth-scrolling smeargle restart-emacs rainbow-delimiters quelpa popwin persp-mode pcre2el paradox page-break-lines orgit open-junk-file neotree move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-ag google-translate golden-ratio go-eldoc gitconfig-mode gitattributes-mode git-timemachine git-messenger gh-md flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-jumper evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu elisp-slime-nav define-word clean-aindent-mode buffer-move bracketed-paste auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (pyvenv pytest pyenv-mode pip-requirements hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode web-mode web-beautify tagedit slim-mode scss-mode sass-mode less-css-mode json-mode js2-refactor js2-mode js-doc jade-mode helm-css-scss haml-mode emmet-mode company-web company-tern coffee-mode base16-theme zonokai-theme zenburn-theme zen-and-art-theme underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme tronesque-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme stekene-theme spacegray-theme soothe-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme pastels-on-dark-theme organic-green-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme niflheim-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme lush-theme light-soap-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme git-gutter-fringe+ git-gutter-fringe git-gutter+ git-gutter gandalf-theme flatui-theme flatland-theme firebelly-theme farmhouse-theme espresso-theme django-theme diff-hl darktooth-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme colorsarenice-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme markdown-mode gitignore-mode package-build bind-key bind-map evil helm-flyspell helm-company helm-c-yasnippet flycheck-pos-tip flycheck company-statistics company-quickhelp company-go company auto-yasnippet auto-dictionary ac-ispell ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe use-package spacemacs-theme spaceline smooth-scrolling smeargle restart-emacs rainbow-delimiters quelpa popwin persp-mode pcre2el paradox page-break-lines orgit open-junk-file neotree move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-ag google-translate golden-ratio go-eldoc gitconfig-mode gitattributes-mode git-timemachine git-messenger gh-md flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-jumper evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu elisp-slime-nav define-word clean-aindent-mode buffer-move bracketed-paste auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
