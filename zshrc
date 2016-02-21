@@ -48,8 +48,14 @@ export PATH=$PATH:$GOPATH/bin
 
 source $ZSH/oh-my-zsh.sh
 
+# load other aliases
 [ -f ~/.aliases ] && source ~/.aliases
 [ -f ~/.bash_extras ] && source ~/.bash_extras
+
+# pyenv
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
