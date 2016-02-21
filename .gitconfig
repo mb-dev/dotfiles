@@ -21,6 +21,9 @@
   smudge = git hawser smudge%f
   required = true
 
+[grep]                                                                                                                           
+  linenumber = true 
+
 ## alias {{{
 [alias]
   st = status
