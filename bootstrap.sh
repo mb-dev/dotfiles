@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ln -s ~/workspace/dotfiles/.zshrc ~/.zshrc
+ln -s ~/workspace/dotfiles/zshrc ~/.zshrc
 ln -s ~/workspace/dotfiles/aliases ~/.aliases
 ln -s ~/workspace/dotfiles/tasks ~/tasks
 ln -s ~/workspace/dotfiles/gcalclirc ~/.gcalclirc

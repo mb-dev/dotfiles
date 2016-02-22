@@ -48,7 +48,7 @@ export PATH=$PATH:$GOPATH/bin
 
 source $ZSH/oh-my-zsh.sh
 
-# load other aliases
+# load other aliases--HEAD
 [ -f ~/.aliases ] && source ~/.aliases
 [ -f ~/.bash_extras ] && source ~/.bash_extras
 
