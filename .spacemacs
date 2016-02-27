@@ -42,7 +42,7 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(base16-theme)
    ;; A list of packages and/or extensions that will not be install and loaded.
-   dotspacemacs-excluded-packages '(anaconda-mode)
+   dotspacemacs-excluded-packages '(anaconda-mode adaptive-wrap)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
@@ -200,7 +200,7 @@ values."
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
    dotspacemacs-smartparens-strict-mode nil
@@ -224,7 +224,7 @@ values."
    ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-whitespace-cleanup 'trailing
    ))
 
 (defun dotspacemacs/user-init ()
@@ -249,16 +249,11 @@ in `dotspacemacs/user-config'."
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-  (setq scroll-conservatively 101) ;; move minimum when cursor exits view, instead of recentering
-  (setq mouse-wheel-scroll-amount '(1)) ;; mouse scroll moves 1 line at a time, instead of 5 lines
-  (setq mouse-wheel-progressive-speed nil) ;; on a long mouse scroll keep scrolling by 1 line
   (defun save-all ()
     (interactive)
     (save-some-buffers t))
   (add-hook 'focus-out-hook 'save-all)
   ;; Scroll left/right
-  (global-set-key [wheel-right] 'scroll-left)
-  (global-set-key [wheel-left] 'scroll-right)
   ;; Indent 
   (setq-default
     tab-width 2
@@ -273,6 +268,8 @@ layers configuration. You are free to put any user code."
   )
   (setq
     python-indent 2
+    coffee-tab-width 2
+    ns-use-srgb-colorspace nil
   )
   ;; https://github.com/syl20bnr/spacemacs/tree/15de481a803b00983d6771309f8f99c1d1e464b8/layers/%2Bframeworks/react#optional-configuration
   (with-eval-after-load 'web-mode
