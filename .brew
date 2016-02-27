@@ -13,3 +13,7 @@ install ppl011 pyqt pyside python python3 qt
 install r readline redis ruby sbt scons
 install shiboken sip sqlite ssh-copy-id sshpass vim
 install watchman xz
+
+install the_silver_searcher
+brew install Caskroom/cask/osxfuse
+brew install osxfuse
