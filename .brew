@@ -1,19 +1,45 @@
-install android-sdk ansible autoconf autoenv automake bash
-install bazaar boost brew-cask cairo cloog cloog-ppl015
-install cmake cscope flow fontconfig freetype gcc
-install gd gdbm gettext ghostscript git glib
-install gmp gmp4 gnupg go graphviz hub
-install imagemagick isl jbig2dec jpeg keybase ledger
-install libevent libffi libgpg-error libksba libmpc libmpc08
-install libpng libtiff libtool libyaml little-cms2 lua
-install macvim memcached mongodb mpfr mpfr2 msgpack
-install mysql neovim neovim-dot-app nvm openssl ossp-uuid
-install pcre pdftohtml pidof pixman pkg-config postgresql
-install ppl011 pyqt pyside python python3 qt
-install r readline redis ruby sbt scons
-install shiboken sip sqlite ssh-copy-id sshpass vim
-install watchman xz
+brew install brew-cask
 
-install the_silver_searcher
+# Administration
+brew install ansible
+
+# Casks
+brew tap caskroom/fonts
+brew cask install font-droid-sans-mono
+brew cask install skim
+
+# Languages
+brew install node
+brew install go
+brew install python
+brew install python3
+brew install pyenv
+brew install pyenv-virtualenv
+brew install ruby
+
+# Editors
+brew install emacs --HEAD --use-git-head --with-cocoa
+brew install macvim
+brew install neovim
+brew install neovim-dot-app
+
+# Databases
+brew install mongodb
+brew install redis
+brew install sqlite
+
+# Utilities
+brew install bash
+brew install git
+brew install hub
+brew install keychain
+brew install the_silver_searcher
+brew install unison
+brew install duti
 brew install Caskroom/cask/osxfuse
 brew install osxfuse
+brew install tmux
+brew install reattach-to-user-namespace
+
+# Hosting
+brew install heroku-toolbelt
