@@ -17,6 +17,9 @@ brew install pyenv
 brew install pyenv-virtualenv
 brew install ruby
 
+# Transmittions
+brew install thrift
+
 # Editors
 brew install emacs --HEAD --use-git-head --with-cocoa
 brew install macvim
