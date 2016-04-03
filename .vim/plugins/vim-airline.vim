@@ -1,3 +1,6 @@
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
+
 if has('statusline')
   set laststatus=2
 

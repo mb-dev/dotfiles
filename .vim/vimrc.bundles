@@ -6,26 +6,18 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
     NeoBundle 'altercation/vim-colors-solarized'
     NeoBundle 'spf13/vim-colors'
-    NeoBundle 'vim-airline/vim-airline'
-    NeoBundle 'vim-airline/vim-airline-themes'
     NeoBundle 'tpope/vim-fugitive'
-    NeoBundle 'scrooloose/syntastic'
     NeoBundle 'godlygeek/tabular'
     NeoBundle 'luochen1990/rainbow'
     NeoBundle 'majutsushi/tagbar'
-    NeoBundle 'scrooloose/nerdtree'
     NeoBundle 'tpope/vim-surround'
     NeoBundle 'tpope/vim-repeat'
     NeoBundle 'rhysd/conflict-marker.vim'
     NeoBundle 'jiangmiao/auto-pairs'              " Insert or delete brackets, parens, quotes in pair.
-    NeoBundle 'ctrlpvim/ctrlp.vim'                " Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
-    NeoBundle 'tacahiroy/ctrlp-funky'             " A super simple function navigator for ctrlp.vim.
     NeoBundle 'terryma/vim-multiple-cursors'      " Brings multiple selection feature into Vim
     NeoBundle 'powerline/fonts'                   " Patched fonts for Powerline users.
     NeoBundle 'bling/vim-bufferline'              " Super simple vim plugin to show the list of buffers in the command bar.
     NeoBundle 'easymotion/vim-easymotion'         " Vim motion on speed!
-    NeoBundle 'scrooloose/nerdtree'
-    NeoBundle 'jistr/vim-nerdtree-tabs'
     NeoBundle 'flazz/vim-colorschemes'
     NeoBundle 'mbbill/undotree'
     NeoBundle 'nathanaelkane/vim-indent-guides'

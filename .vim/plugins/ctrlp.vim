@@ -1,3 +1,6 @@
+NeoBundle 'ctrlpvim/ctrlp.vim'                " Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
+NeoBundle 'tacahiroy/ctrlp-funky'             " A super simple function navigator for ctrlp.vim.
+
 let g:ctrlp_working_path_mode = 'ra'
 nnoremap <silent> <D-t> :CtrlP<CR>
 nnoremap <silent> <D-r> :CtrlPMRU<CR>
