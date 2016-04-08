@@ -43,6 +43,7 @@ brew install Caskroom/cask/osxfuse
 brew install osxfuse
 brew install tmux
 brew install reattach-to-user-namespace
+brew install httpie
 
 # Hosting
 brew install heroku-toolbelt

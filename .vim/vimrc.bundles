@@ -6,7 +6,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
     NeoBundle 'altercation/vim-colors-solarized'
     NeoBundle 'spf13/vim-colors'
-    NeoBundle 'tpope/vim-fugitive'
+    NeoBundle 'jnurmine/Zenburn'
     NeoBundle 'godlygeek/tabular'
     NeoBundle 'luochen1990/rainbow'
     NeoBundle 'majutsushi/tagbar'

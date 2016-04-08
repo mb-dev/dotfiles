@@ -9,9 +9,13 @@ source ~/.vim/functions.vim
 source ~/.vim/vimrc.bundles
 
 " Vim UI {
-  set background=dark
   syntax on                                       " Syntax highlighting
-  color Tomorrow-Night                            " Load a colorscheme
+  if has('gui_running')
+    set background=dark
+    colorscheme Tomorrow-Night                      " Load a colorscheme
+  else
+    colorscheme zenburn
+  endif
   set guifont=Droid\ Sans\ Mono:h11               " Use Droid Sans Mono font
 
   set backspace=indent,eol,start                  " Backspace for dummies
@@ -32,6 +36,7 @@ source ~/.vim/vimrc.bundles
   filetype plugin indent on                       " Automatically detect file types.
   set mouse=a                                     " Automatically enable mouse usage
   set mousehide                                   " Hide the mouse cursor while typing
+  set encoding=utf-8
   scriptencoding utf-8
   set shortmess+=filmnrxoOtT                      " Abbrev. of messages (avoids 'hit enter')
                                                   " Allow for cursor beyond last character
