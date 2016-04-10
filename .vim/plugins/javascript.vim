@@ -4,6 +4,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'digitaltoad/vim-pug'
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'elzr/vim-json'
+NeoBundle 'isRuslan/vim-es6'
 
 let g:syntastic_typescript_checkers=["eslint"]
 let g:syntastic_javascript_checkers = ['jsxhint']
