@@ -1,8 +1,15 @@
 .vim/plugged
 .vim/spell
 .vim/sessions
+.vim/bundle/
+.vim/undo-dir
+.vim/dein
 .DS_Store
 .config/nvim/plugged
+.config/configstore
+.config/deluge
+.config/git
+.config/gocode
 *.swp
 .atom/storage
 .atom/compile-cache
@@ -12,6 +19,5 @@
 .atom/packages
 .atom/blob-store
 .atom/.apm
-.vim/bundle/
 .config/robomongo
 .config/hub

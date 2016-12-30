@@ -1,4 +1,4 @@
-# Path to your oh-my-zsh installation.
+# P ath to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -37,16 +37,20 @@ ZSH_THEME="robbyrussell"
 plugins=(git brew tmux)
 
 # User configuration
-export PATH="%ANDROID_HOME%platform-tools:/Library/Frameworks/Python.framework/Versions/3.4/bin:/opt/local/bin:/opt/local/sbin:~/workspace/adt-bundle-mac-x86_64-20131030/sdk/platform-tools/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/go/bin:/usr/local/opt/go/libexec/bin:~/workspace/go//bin"
+export PATH="./node_modules/.bin:/Library/Frameworks/Python.framework/Versions/3.4/bin:/opt/local/bin:/opt/local/sbin:~/workspace/adt-bundle-mac-x86_64-20131030/sdk/platform-tools/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/go/bin:/usr/local/opt/go/libexec/bin:~/workspace/go//bin"
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH="%ANDROID_HOME%\platform-tools:${PATH}"
 export GOPATH=$HOME/workspace/go/
 export GO15VENDOREXPERIMENT=1
 export PATH=$PATH:$GOPATH/bin
-
+export NVM_DIR="$HOME/.nvm"
+. "$(brew --prefix nvm)/nvm.sh"
+export REQUESTS_CA_BUNDLE=/usr/local/etc/openssl/certs/cacert.pem
+. /usr/local/bin/virtualenvwrapper.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+compinit -D ~/.zcompdump
 
 # load other aliases--HEAD
 [ -f ~/.aliases ] && source ~/.aliases
@@ -83,6 +87,7 @@ eval "$(pyenv virtualenv-init -)"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Skip forward/back a word with opt-arrow
 alias reload='source ~/.zshrc'
+alias ag='ag --path-to-ignore ~/.agignore'
 
 # Key binding
 bindkey '[C' forward-word

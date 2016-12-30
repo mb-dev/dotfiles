@@ -1,9 +1,8 @@
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'jistr/vim-nerdtree-tabs'
+call dein#add('scrooloose/nerdtree',
+    \ {'on_cmd': 'NERDTreeToggle'})
 
-map <C-e> <plug>NERDTreeTabsToggle<CR>
+nmap <silent> <C-e> :NERDTreeToggle<CR>
 map <leader>e :NERDTreeFind<CR>
-nmap <leader>nt :NERDTreeFind<CR>
 
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$', '^node_modules$', '^env$', '^__pycache__$']

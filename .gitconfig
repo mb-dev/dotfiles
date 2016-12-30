@@ -16,6 +16,9 @@
 [push]
   default = current
 
+[pull]
+  default = current
+
 [filter "hawser"]
   clean = git hawser clean %f
   smudge = git hawser smudge%f
@@ -36,3 +39,5 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[fetch]
+	prune = true

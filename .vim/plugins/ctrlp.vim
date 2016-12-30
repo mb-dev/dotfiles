@@ -1,9 +1,8 @@
-NeoBundle 'ctrlpvim/ctrlp.vim'                " Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
-NeoBundle 'tacahiroy/ctrlp-funky'             " A super simple function navigator for ctrlp.vim.
+call dein#add('ctrlpvim/ctrlp.vim', {'on_cmd': 'CtrlP'})
 
 let g:ctrlp_working_path_mode = 'ra'
-nnoremap <silent> <D-t> :CtrlP<CR>
-nnoremap <silent> <D-r> :CtrlPMRU<CR>
+nnoremap <silent> <c-p> :CtrlP<CR>
+nnoremap <silent> <c-o> :CtrlPMRU<CR>
 let g:ctrlp_custom_ignore = {
       \ 'dir':  '\.git$\|\.hg$\|\.svn\|node_modules\|plugged$',
       \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
