@@ -6,3 +6,4 @@ ln -s ~/workspace/dotfiles/tasks ~/tasks
 ln -s ~/workspace/dotfiles/gcalclirc ~/.gcalclirc
 ln -s ~/workspace/dotfiles/.spacemacs ~/.spacemacs
 ln -s ~/workspace/dotfiles/.config/nvim ~/.config/nvim
+ln -s ~/workspace/dotfiles/.vim/init.vim ~/.vimrc
