@@ -1,5 +1,9 @@
 brew install brew-cask
 
+# Shell
+brew install zsh
+# add /usr/local/bin/zsh shell to /etc/shells
+
 # Administration
 brew install ansible
 
