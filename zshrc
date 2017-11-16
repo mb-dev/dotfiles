@@ -45,7 +45,7 @@ export GO15VENDOREXPERIMENT=1
 export PATH=$PATH:$GOPATH/bin
 export NVM_DIR="$HOME/.nvm"
 . "$(brew --prefix nvm)/nvm.sh"
-export REQUESTS_CA_BUNDLE=/usr/local/etc/openssl/certs/cacert.pem
+# export REQUESTS_CA_BUNDLE=/usr/local/etc/openssl/certs/cacert.pem
 . /usr/local/bin/virtualenvwrapper.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -88,6 +88,13 @@ eval "$(pyenv virtualenv-init -)"
 # Skip forward/back a word with opt-arrow
 alias reload='source ~/.zshrc'
 alias ag='ag --path-to-ignore ~/.agignore'
+alias gc-='alias gc-="git checkout -"'
+alias editrefmd='code ~/Dropbox/Reference\ Documentation'
+alias editdot='code ~/workspace/dotfiles'
+alias twitch-wifi='osascript ~/connect-twitch-wifi.scpt'
+alias gpsu="git push --set-upstream origin `git symbolic-ref --short HEAD`"
+alias chrome="/Applications/Google\\ \\Chrome.app/Contents/MacOS/Google\\ \\Chrome"
+alias chromemail="chrome --new-window 'https://mail.google.com/mail/u/1/?tab=cm#inbox' 'https://mail.google.com/mail/u/0/#inbox' 'https://calendar.google.com/calendar/b/1/render?tab=mc#main_7' 'https://calendar.google.com/calendar/b/0/r/week?tab=mc' 'https://www.facebook.com/' 'https://jira.twitch.com/secure/RapidBoard.jspa?rapidView=482&view=planning&selectedIssue=VWT-816&quickFilter=2118&epics=visible'"
 
 # Key binding
 bindkey '[C' forward-word
@@ -103,3 +110,6 @@ bindkey '[H' kill-word
 
 # Delete line with cmd-backspace
 bindkey '[I' kill-whole-line
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(rbenv init -)"

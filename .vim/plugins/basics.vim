@@ -48,7 +48,10 @@ if has('clipboard')
   endif
 endif
 
-set undodir=~/.vim/undo-dir
+let myUndoDir=expand('$HOME/.vim/undo-dir')
+
+let &undodir=myUndoDir
+call system('mkdir -p ' . myUndoDir)
 set undofile
 set undolevels=1000     " Maximum number of changes that can be undone
 set undoreload=10000    " Maximum number lines to save for undo on a buffer reload

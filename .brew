@@ -7,7 +7,7 @@ brew install zsh
 # Administration
 brew install ansible
 
-# Casks
+# Casks - fonts
 brew tap caskroom/fonts
 brew cask install font-droid-sans-mono
 brew cask install skim

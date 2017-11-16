@@ -1,8 +1,11 @@
 call dein#add('ctrlpvim/ctrlp.vim', {'on_cmd': 'CtrlP'})
+call dein#add('JazzCore/ctrlp-cmatcher', {'build': './install.sh'} )
+call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0})
 
 let g:ctrlp_working_path_mode = 'ra'
 nnoremap <silent> <c-p> :CtrlP<CR>
 nnoremap <silent> <c-o> :CtrlPMRU<CR>
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 let g:ctrlp_custom_ignore = {
       \ 'dir':  '\.git$\|\.hg$\|\.svn\|node_modules\|plugged$',
       \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
