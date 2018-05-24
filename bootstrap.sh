@@ -8,3 +8,5 @@ ln -s ~/workspace/dotfiles/.spacemacs ~/.spacemacs
 ln -s ~/workspace/dotfiles/.config/vim ~/.config/vim
 ln -s ~/workspace/dotfiles/.config/nvim ~/.config/nvim
 ln -s ~/workspace/dotfiles/.vim/init.vim ~/.vimrc
+ln -s ~/workspace/dotfiles/.hammerspoon ~/.hammerspoon
+ln -s ~/vscode-settings.json /Users/moshebe/Library/Application\ Support/Code/User/settings.json
