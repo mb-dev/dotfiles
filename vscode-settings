@@ -1,4 +1,6 @@
 {
     "git.path": "/usr/bin/git",
     "files.autoSave": "onFocusChange",
+    "editor.tabSize": 2,
+    "vim.useSystemClipboard": true,
 }
