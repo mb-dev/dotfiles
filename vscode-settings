@@ -1,11 +1,32 @@
 {
     "git.path": "/usr/bin/git",
-    "files.autoSave": "onFocusChange",
     "editor.tabSize": 2,
     "vim.useSystemClipboard": true,
     "explorer.autoReveal": false,
     "window.zoomLevel": 0,
-    "go.formatTool": "goreturns",
+    "go.formatTool": "goimports",
     "files.insertFinalNewline": true,
-    "files.trimFinalNewlines": true
+    "files.trimFinalNewlines": true,
+    "go.testFlags": [
+        "-v"
+    ],
+    "[python]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+    },
+    "files.associations": {
+        "*.make": "makefile"
+    },
+    "python.formatting.provider": "black",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "python.jediEnabled": false,
+    "git.enableSmartCommit": true,
+    "python.sortImports.path": "isort",
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "go.useLanguageServer": true,
+    "files.autoSave": "onFocusChange",
+    "python.languageServer": "Microsoft"
 }

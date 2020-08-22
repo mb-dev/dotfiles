@@ -34,19 +34,16 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew tmux)
+plugins=(git brew)
 
 # User configuration
-export PATH="./node_modules/.bin:/Library/Frameworks/Python.framework/Versions/3.4/bin:/opt/local/bin:/opt/local/sbin:~/workspace/adt-bundle-mac-x86_64-20131030/sdk/platform-tools/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/go/bin:/usr/local/opt/go/libexec/bin:~/workspace/go//bin"
 export ANDROID_HOME=/usr/local/opt/android-sdk
-export PATH="%ANDROID_HOME%\platform-tools:${PATH}"
 export GOPATH=$HOME/workspace/go/
-export GO15VENDOREXPERIMENT=1
-export PATH=$PATH:$GOPATH/bin
-export NVM_DIR="$HOME/.nvm"
-. "$(brew --prefix nvm)/nvm.sh"
+export PYTHON3_PATH=/usr/local/opt/python@3.7/bin
+
+export PATH="$PYTHON3_PATH:$GOPATH/bin:/usr/local/bin:$PATH"
+
 # export REQUESTS_CA_BUNDLE=/usr/local/etc/openssl/certs/cacert.pem
-. /usr/local/bin/virtualenvwrapper.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -58,8 +55,6 @@ compinit -D ~/.zcompdump
 
 # pyenv
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -88,13 +83,16 @@ eval "$(pyenv virtualenv-init -)"
 # Skip forward/back a word with opt-arrow
 alias reload='source ~/.zshrc'
 alias ag='ag --path-to-ignore ~/.agignore'
-alias gc-='alias gc-="git checkout -"'
+alias gc-='git checkout -'
+alias gb='git branch --sort=-committerdate'
 alias editrefmd='code ~/Dropbox/Reference\ Documentation'
 alias editdot='code ~/workspace/dotfiles'
 alias twitch-wifi='osascript ~/connect-twitch-wifi.scpt'
 alias gpsu="git push --set-upstream origin `git symbolic-ref --short HEAD`"
 alias chrome="/Applications/Google\\ \\Chrome.app/Contents/MacOS/Google\\ \\Chrome"
 alias chromemail="chrome --new-window 'https://mail.google.com/mail/u/1/?tab=cm#inbox' 'https://mail.google.com/mail/u/0/#inbox' 'https://calendar.google.com/calendar/b/1/render?tab=mc#main_7' 'https://calendar.google.com/calendar/b/0/r/week?tab=mc' 'https://www.facebook.com/' 'https://jira.twitch.com/secure/RapidBoard.jspa?rapidView=482&view=planning&selectedIssue=VWT-816&quickFilter=2118&epics=visible'"
+alias gotwitch="cd ~/workspace/go/src/code.justin.tv/"
+alias untargz="tar xzvf"
 
 # Key binding
 bindkey '[C' forward-word
@@ -112,4 +110,8 @@ bindkey '[H' kill-word
 bindkey '[I' kill-whole-line
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(rbenv init -)"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH=/Users/moshebe/.toolbox/bin:$PATH
+export PATH="$PATH:$HOME/.poetry/bin"
+export PATH="/usr/local/opt/node@12/bin:$PATH"
